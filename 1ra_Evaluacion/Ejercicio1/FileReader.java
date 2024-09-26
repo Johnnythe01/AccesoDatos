@@ -5,12 +5,10 @@ import java.util.Scanner;
 
 public class FileReader {
 
-int data = fileReader.read();
-while(data != -1) {
-  //do something with data...
-  doSomethingWithData(data);
+  Reader fileReader = new FileReader("C:\\Users\\alumne-DAM\\Documents\\DAM 2º\\Acceso a Datos\\AccesoDatos\\input-text.txt");
 
-  data = fileReader.read();
-}
-fileReader.close();
+  int data = fileReader.read();
+  while(data != -1) {
+    data = fileReader.read();
+  }
 }
