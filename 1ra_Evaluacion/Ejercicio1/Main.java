@@ -3,6 +3,14 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.Scanner;
 /*
+
+-File
+-RandomAccessFile
+-FileInputStream
+-FileReader
+-FileOutputStream
+-FileWriter
+
 The objective is to create an example with each of the JAVA classes watched at class for the management of files
 and directories. 
 First, you have to execute your program with access to the reading file. After that, you have to make a copy
@@ -19,6 +27,6 @@ or “application.yml”. Recommendation: use relative path instead of complete 
 Your properties must be called like: “exercise.path”, ”exercise.nameFile”, “exercise.fileExtension”
 
  */
-public class Ejercicio1 {
-    
+public class Main {
+
 }

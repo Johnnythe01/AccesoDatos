@@ -9,6 +9,6 @@ escribir
 file -> permisos
 leer -> falla -> 
 */
-public class File {
+public class AccessFile12345678T {
     
 }
