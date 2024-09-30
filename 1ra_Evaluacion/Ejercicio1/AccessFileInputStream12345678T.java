@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class AccessFileInputStream12345678T {
 
   public static void main(String[] args) {
-      FileInputStream fileInputStream = new FileInputStream("C:\\\\Users\\\\alumne-DAM\\\\Documents\\\\DAM 2º\\\\Acceso a Datos\\\\AccesoDatos\\\\input1.txt");
+      FileInputStream fileInputStream = new FileInputStream("C:\\Users\\alumne-DAM\\Documents\\DAM 2º\\Acceso a Datos\\AccesoDatos\\input1.txt");
   
   
   int data = fileInputStream.read();
