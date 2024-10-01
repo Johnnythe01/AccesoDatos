@@ -1,16 +1,25 @@
 
 public class Main {
     
-    public static void main(String[] args){}
+    public static void main(String[] args){
+
+        String pathtxt = "copia_input1.txt";
+        String pathtxtDestino = "copia_input2.txt";
+
+        AccessFileReader12345678T lector = new AccessFileReader12345678T();
+        lector.LeerArchivo(pathtxt);
+
+        AccessFileWriter12345678T escritor = new AccessFileWriter12345678T();
+        escritor.EscritorArchivo(pathtxtDestino, "Hola Mundo");
+
+    }
 
     //AccessFileInputStream12345678T accessFileInputStream12345678T = new AccessFileInputStream12345678T();
     
     //AccessFileOutputStream12345678T accessFileOutputStream12345678T = new AccessFileOutputStream12345678T();
     
     
-    AccessFileReader12345678T accessFileReader12345678T = new AccessFileReader12345678T();
     
-    AccessFileWriter12345678T accessFileWriter12345678T = new AccessFileWriter12345678T();
 
     //AccessFile12345678T accessFile12345678T = new AccessFile12345678T();
 

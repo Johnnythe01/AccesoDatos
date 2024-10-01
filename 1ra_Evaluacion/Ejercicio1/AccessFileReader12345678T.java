@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.util.Scanner; // Import the Scanner class to read text files
 
 public class AccessFileReader12345678T {
-  public static void main(String[] args) {
+  public void LeerArchivo(String path) {
     try {
       File myObj = new File("C:\\Users\\alumne-DAM\\Documents\\DAM 2º\\Acceso a Datos\\AccesoDatos\\input1.txt");
       Scanner myReader = new Scanner(myObj);
