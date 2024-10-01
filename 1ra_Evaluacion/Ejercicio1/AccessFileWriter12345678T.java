@@ -1,21 +1,17 @@
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
+import java.io.*;
 
 public class AccessFileWriter12345678T {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Introduce el nombre del fichero: ");
-        String nombreFichero = sc.nextLine();
-        System.out.println("Introduce el texto a escribir en el fichero: ");
-        String texto = sc.nextLine();
-        try {
-            FileWriter fw = new FileWriter(nombreFichero);
-            fw.write(texto);
-            fw.close();
+        File archivoOrigen = new File("input1.txt");    // Archivo original
+        File archivoDestino = new File("copia_input1.txt"); // Archivo copiado
+
+        try (FileReader fr = new FileReader(archivoOrigen);
+             FileWriter fw = new FileWriter(archivoDestino)) {
+
+            System.out.println("Archivo copiado correctamente al destino: " + archivoDestino.getPath());
         } catch (IOException e) {
-            System.out.println("Error E/S: " + e);
+            System.out.println("Error al copiar el archivo: " + e.getMessage());
         }
-        sc.close();
-    }  
+    }
 }
+
