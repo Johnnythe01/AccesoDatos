@@ -1,24 +1,18 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 
 public class Main {
-
-    //AccessFile12345678T accessFile12345678T = new AccessFile12345678T();
     
+    public static void main(String[] args){}
+
     //AccessFileInputStream12345678T accessFileInputStream12345678T = new AccessFileInputStream12345678T();
     
     //AccessFileOutputStream12345678T accessFileOutputStream12345678T = new AccessFileOutputStream12345678T();
     
+    
+    AccessFileReader12345678T accessFileReader12345678T = new AccessFileReader12345678T();
+    
     AccessFileWriter12345678T accessFileWriter12345678T = new AccessFileWriter12345678T();
 
-    AccessFileReader12345678T accessFileReader12345678T = new AccessFileReader12345678T();
-
+    //AccessFile12345678T accessFile12345678T = new AccessFile12345678T();
 
 }
 
