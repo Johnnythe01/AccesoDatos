@@ -1,15 +1,37 @@
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.Reader;
-import java.util.Scanner;
+import java.io.*;
 
-public class FileOutputStream {
-    OutputStream output = new FileOutputStream("c:\\data\\output-text.txt");
+public class AccessFileOutputStream12345678T {
+    public void EscritorArchivoBinario(String pathOrigen, String pathDestino) {
+        File archivoOrigen = new File(pathOrigen);    // Archivo original
+        File archivoDestino = new File(pathDestino);  // Archivo destino
 
-while(moreData) {
-  int data = getMoreData();
-  output.write(data);
-}
-output.close();
+        // Comprobamos si el archivo de origen existe
+        if (!archivoOrigen.exists()) {
+            System.out.println("El archivo original no existe: " + pathOrigen);
+            return;
+        }
+
+        // Utilizamos FileInputStream y FileOutputStream para copiar archivos binarios
+        try (FileInputStream fis = new FileInputStream(archivoOrigen);
+             FileOutputStream fos = new FileOutputStream(archivoDestino)) {
+
+            byte[] buffer = new byte[1024];
+            int bytesLeidos;
+
+            // Leemos y escribimos el archivo en bloques de bytes
+            while ((bytesLeidos = fis.read(buffer)) != -1) {
+                fos.write(buffer, 0, bytesLeidos);  // Escribimos los bytes leídos en el archivo de destino
+            }
+
+            System.out.println("Archivo binario copiado correctamente al destino: " + archivoDestino.getPath());
+
+        } catch (IOException e) {
+            System.out.println("Error al copiar el archivo: " + e.getMessage());
+        }
     }
+
+    public static void main(String[] args) {
+        AccessFileOutputStream12345678T escritor = new AccessFileOutputStream12345678T();
+        escritor.EscritorArchivoBinario("Windows_Final.png", "Windows_Final2.png");
+    }
+}

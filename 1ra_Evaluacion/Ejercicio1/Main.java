@@ -12,17 +12,16 @@ public class Main {
         AccessFileWriter12345678T escritor = new AccessFileWriter12345678T();
         escritor.EscritorArchivo(pathtxtDestino, "Hola Mundo");
 
+        AccessFileInputStream12345678T accessFileInputStream12345678T = new AccessFileInputStream12345678T();
+        accessFileInputStream12345678T.LeerArchivo(pathtxt);
+
+        // AccessFileOutputStream12345678T accessFileOutputStream12345678T = new AccessFileOutputStream12345678T();
+        // accessFileOutputStream12345678T.EscritorArchivo(pathtxtDestino, "Hola Mundo");
+
+        // AccessFilePermission12345678T accessFilePermission12345678T = new AccessFilePermission12345678T();
+        // accessFilePermission12345678T.main(args);
+
     }
-
-    //AccessFileInputStream12345678T accessFileInputStream12345678T = new AccessFileInputStream12345678T();
-    
-    //AccessFileOutputStream12345678T accessFileOutputStream12345678T = new AccessFileOutputStream12345678T();
-    
-    
-    
-
-    //AccessFile12345678T accessFile12345678T = new AccessFile12345678T();
-
 }
 
 /*
