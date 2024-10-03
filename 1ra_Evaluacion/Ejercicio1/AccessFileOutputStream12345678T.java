@@ -32,6 +32,6 @@ public class AccessFileOutputStream12345678T {
 
     public static void main(String[] args) {
         AccessFileOutputStream12345678T escritor = new AccessFileOutputStream12345678T();
-        escritor.EscritorArchivoBinario("Windows_Final.png", "Windows_Final2.png");
+        escritor.EscritorArchivoBinario("cuesta_obispo.jpg", "cuesta_obispo2.jpg");
     }
 }

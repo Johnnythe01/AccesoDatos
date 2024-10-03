@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class AccessFileInputStream12345678T {
     public void LeerArchivo(String path) {
-        File archivo = new File("C:\\Users\\alumne-DAM\\Documents\\DAM 2º\\Acceso a Datos\\AccesoDatos\\Windows_Final.png");
+        File archivo = new File("C:\\Users\\alumne-DAM\\Documents\\DAM 2º\\Acceso a Datos\\AccesoDatos\\cuesta_obispo.jpg");
         try (FileInputStream fis = new FileInputStream(archivo)) {
             int byteData;
             // Leemos el archivo byte por byte
@@ -19,6 +19,6 @@ public class AccessFileInputStream12345678T {
 
     public static void main(String[] args) {
         AccessFileInputStream12345678T lector = new AccessFileInputStream12345678T();
-        lector.LeerArchivo("C:\\Users\\alumne-DAM\\Documents\\DAM 2º\\Acceso a Datos\\AccesoDatos\\Windows_Final.png");
+        lector.LeerArchivo("C:\\Users\\alumne-DAM\\Documents\\DAM 2º\\Acceso a Datos\\AccesoDatos\\cuesta_obispo.jpg");
     }
 }
