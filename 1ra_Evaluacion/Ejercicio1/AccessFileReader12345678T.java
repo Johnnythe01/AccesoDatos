@@ -1,20 +1,21 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class AccessFileReader12345678T {
-  public void LeerArchivo(String path) {
-    try {
-      File myObj = new File("C:\\Users\\alumne-DAM\\Documents\\DAM 2º\\Acceso a Datos\\AccesoDatos\\input1.txt");
-      Scanner myReader = new Scanner(myObj);
-      while (myReader.hasNextLine()) {
-        String data = myReader.nextLine();
-        System.out.println(data);
-      }
-      myReader.close();
-    } catch (FileNotFoundException e) {
-      System.out.println("Ha ocurrido un error.");
-      e.printStackTrace();
+    public String LeerArchivo(String path) {
+        StringBuilder contenido = new StringBuilder();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                contenido.append(linea).append("\n");
+            }
+            // System.out.println("Archivo 1 leído correctamente: \n" + contenido.toString());
+        } catch (IOException e) {
+            System.out.println("Error al leer el archivo: " + e.getMessage());
+        }
+
+        return contenido.toString();  // Devolvemos todo el contenido del archivo como una cadena
     }
-  }
 }

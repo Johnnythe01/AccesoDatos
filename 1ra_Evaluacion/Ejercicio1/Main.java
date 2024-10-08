@@ -3,23 +3,32 @@ public class Main {
     
     public static void main(String[] args){
 
-        String pathtxt = "copia_input1.txt";
+        String pathtxt = "input1.txt";
         String pathtxtDestino = "copia_input2.txt";
-
+        String pathImagen = "cuesta_obispo.jpg";
         AccessFileReader12345678T lector = new AccessFileReader12345678T();
-        lector.LeerArchivo(pathtxt);
+        String Contenido = lector.LeerArchivo(pathtxt);
+        System.out.println("archivo1:");
+        System.out.println(Contenido);
 
         AccessFileWriter12345678T escritor = new AccessFileWriter12345678T();
-        escritor.EscritorArchivo(pathtxtDestino, "Hola Mundo");
+        System.out.println("escribiendo archivo2...");
+        escritor.EscritorArchivo(pathtxtDestino, Contenido);
+
+        Contenido = lector.LeerArchivo(pathtxtDestino);
+        System.out.println("archivo2:");
+        System.out.println(Contenido);
 
         AccessFileInputStream12345678T accessFileInputStream12345678T = new AccessFileInputStream12345678T();
         accessFileInputStream12345678T.LeerArchivo(pathtxt);
 
-        // AccessFileOutputStream12345678T accessFileOutputStream12345678T = new AccessFileOutputStream12345678T();
-        // accessFileOutputStream12345678T.EscritorArchivo(pathtxtDestino, "Hola Mundo");
+        AccessFileOutputStream12345678T accessFileOutputStream12345678T = new AccessFileOutputStream12345678T();
+        accessFileOutputStream12345678T.EscritorArchivoBinario(pathtxtDestino, "Hola Mundo");
 
-        // AccessFilePermission12345678T accessFilePermission12345678T = new AccessFilePermission12345678T();
-        // accessFilePermission12345678T.main(args);
+        AccessFilePermission12345678T accessFilePermission12345678T = new AccessFilePermission12345678T();
+        accessFilePermission12345678T.QuitarPermisoEscritura(pathtxtDestino);
+
+        lector.LeerArchivo(pathtxtDestino); //leer el .txt, esta vez sin permisos de lectura.
 
     }
 }
@@ -27,7 +36,6 @@ public class Main {
 /*
 
 -File
--RandomAccessFile
 -FileInputStream
 -FileReader
 -FileOutputStream

@@ -9,6 +9,8 @@ public class AccessFileInputStream12345678T {
             int byteData;
             // Leemos el archivo byte por byte
             while ((byteData = fis.read()) != -1) {
+                //TODO: pasar de bytes a texto
+                
             }
             System.out.println("Archivo leído correctamente.");
 
