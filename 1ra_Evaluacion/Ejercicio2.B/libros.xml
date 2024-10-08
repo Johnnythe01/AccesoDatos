@@ -1,0 +1,122 @@
+<llibres>
+    <llibre>
+        <autor>Stephen King</autor>
+        <titol>Carrie</titol>
+        <any>1974</any>
+        <resum>Una joven con poderes telequinéticos se venga de sus abusadores en una noche de graduación. La historia explora la crueldad y la venganza, destacando la lucha interna de Carrie y sus trágicas circunstancias familiares.</resum>
+    </llibre>
+    <llibre>
+        <autor>Stephen King</autor>
+        <titol>El resplandor</titol>
+        <any>1977</any>
+        <resum>Jack Torrance, un escritor, se convierte en el cuidador de un hotel aislado en invierno. A medida que la locura lo consume, su hijo Danny, con habilidades psíquicas, lucha por escapar de las fuerzas sobrenaturales que acechan en el hotel.</resum>
+    </llibre>
+    <llibre>
+        <autor>Stephen King</autor>
+        <titol>La zona muerta</titol>
+        <any>1979</any>
+        <resum>Un hombre despierta de un coma con la habilidad de ver el futuro y el pasado de las personas al tocarlas. Utiliza este don para intentar prevenir tragedias, pero se enfrenta a dilemas morales complicados.</resum>
+    </llibre>
+    <llibre>
+        <autor>Stephen King</autor>
+        <titol>It</titol>
+        <any>1986</any>
+        <resum>Un grupo de amigos se reúne para enfrentar a Pennywise, un ser maligno que toma la forma de un payaso. La historia alterna entre su infancia y su vida adulta, explorando el poder de la amistad y el coraje frente al miedo.</resum>
+    </llibre>
+    <llibre>
+        <autor>Stephen King</autor>
+        <titol>Misery</titol>
+        <any>1987</any>
+        <resum>Un autor se convierte en prisionero de su "fan número uno" tras un accidente automovilístico. Annie Wilkes lo somete a torturas psicológicas mientras le exige que resucite a su personaje favorito. La lucha por la supervivencia es intensa y aterradora.</resum>
+    </llibre>
+    <llibre>
+        <autor>Stephen King</autor>
+        <titol>La milla verde</titol>
+        <any>1996</any>
+        <resum>Un guardia de prisión narra la historia de John Coffey, un recluso con habilidades extraordinarias. A medida que se desarrolla la trama, el guardia descubre la verdad sobre Coffey y el sistema de justicia que lo ha condenado.</resum>
+    </llibre>
+    <llibre>
+        <autor>Stephen King</autor>
+        <titol>El juego de Gerald</titol>
+        <any>1992</any>
+        <resum>Una pareja intenta revivir su vida sexual en una cabaña, pero el juego se convierte en una pesadilla cuando el marido muere repentinamente y la mujer queda esposada a la cama, enfrentándose a sus propios demonios.</resum>
+    </llibre>
+    <llibre>
+        <autor>Stephen King</autor>
+        <titol>El talismán</titol>
+        <any>1984</any>
+        <resum>Un joven se embarca en una búsqueda a través de un mundo paralelo para salvar a su madre enferma. En su viaje, descubre su conexión con un reino mágico y debe enfrentarse a oscuros enemigos.</resum>
+    </llibre>
+    <llibre>
+        <autor>Stephen King</autor>
+        <titol>La danza de la muerte</titol>
+        <any>1978</any>
+        <resum>Tras una pandemia que acaba con la mayor parte de la población, los sobrevivientes se agrupan en comunidades y enfrentan el bien y el mal en un nuevo mundo. La lucha por el futuro se intensifica en un épico enfrentamiento.</resum>
+    </llibre>
+    <llibre>
+        <autor>Richard Bach</autor>
+        <titol>Juan Salvador Gaviota</titol>
+        <any>1970</any>
+        <resum>Una gaviota busca la perfección en el vuelo y desafía las normas de su comunidad. Su viaje se convierte en un símbolo de la lucha por la autoexpresión y la libertad, mostrando que seguir nuestros sueños puede ser un camino solitario pero gratificante.</resum>
+    </llibre>
+    <llibre>
+        <autor>Richard Bach</autor>
+        <titol>Ilusiones</titol>
+        <any>1977</any>
+        <resum>Un mecánico de aviones se encuentra con un misterioso maestro que le enseña lecciones sobre la vida y la realidad. A través de sus enseñanzas, descubre que somos los creadores de nuestra propia experiencia y que la vida está llena de posibilidades.</resum>
+    </llibre>
+    <llibre>
+        <autor>Richard Bach</autor>
+        <titol>Un regalo para ti</titol>
+        <any>1992</any>
+        <resum>Este libro es una recopilación de historias que nos invitan a reflexionar sobre el amor, la libertad y la búsqueda del propósito. Cada relato ofrece una perspectiva única sobre la vida y nos inspira a encontrar nuestra verdad interior.</resum>
+    </llibre>
+    <llibre>
+        <autor>Stephen King</autor>
+        <titol>Cujo</titol>
+        <any>1981</any>
+        <resum>Un perro rabioso aterroriza a una madre y su hijo atrapados en un coche. A medida que la situación se torna desesperada, deben enfrentar sus miedos y luchar por sobrevivir en una experiencia aterradora y angustiante.</resum>
+    </llibre>
+    <llibre>
+        <autor>Stephen King</autor>
+        <titol>La historia de Lisey</titol>
+        <any>2006</any>
+        <resum>Después de la muerte de su esposo, Lisey se enfrenta a sus recuerdos y secretos. A través de su viaje emocional, explora el amor, la pérdida y la conexión profunda entre los seres humanos, mientras se enfrenta a fuerzas oscuras del pasado.</resum>
+    </llibre>
+    <llibre>
+        <autor>Stephen King</autor>
+        <titol>El retrato de Dorian Gray</titol>
+        <any>1890</any> <!-- Este es un error, no es de King, se usa como ejemplo -->
+        <resum>Un joven se obsesiona con su propia belleza y juventud, mientras un retrato suyo envejece en su lugar. La historia explora la moralidad, la vanidad y las consecuencias de una vida sin límites.</resum>
+    </llibre>
+    <llibre>
+        <autor>Stephen King</autor>
+        <titol>El ciclo del hombre lobo</titol>
+        <any>1984</any>
+        <resum>Una historia de horror que sigue a un hombre lobo que aterroriza a un pequeño pueblo. A medida que las noches de luna llena traen caos, los residentes luchan por sobrevivir mientras intentan descubrir la verdad detrás de la criatura.</resum>
+    </llibre>
+    <llibre>
+        <autor>Stephen King</autor>
+        <titol>Pet Sematary</titol>
+        <any>1983</any>
+        <resum>Una familia descubre un cementerio de mascotas que tiene el poder de devolver a los muertos. Cuando enfrentan la tragedia, se ven atrapados en un ciclo de horror que desafía las leyes de la vida y la muerte.</resum>
+    </llibre>
+    <llibre>
+        <autor>Richard Bach</autor>
+        <titol>Nada es imposible</titol>
+        <any>1982</any>
+        <resum>Este libro nos enseña que nuestros sueños y metas pueden hacerse realidad si estamos dispuestos a trabajar por ellos. Bach comparte historias de su vida y cómo la perseverancia puede llevarnos a lograr lo que creíamos inalcanzable.</resum>
+    </llibre>
+    <llibre>
+        <autor>Richard Bach</autor>
+        <titol>El camino del artista</titol>
+        <any>1984</any>
+        <resum>Un viaje introspectivo que nos lleva a descubrir nuestra creatividad y a superar los bloqueos mentales. A través de ejercicios y reflexiones, Bach nos anima a explorar nuestro verdadero potencial artístico y vivir una vida plena.</resum>
+    </llibre>
+    <llibre>
+        <autor>Stephen King</autor>
+        <titol>Ojos de fuego</titol>
+        <any>1980</any>
+        <resum>Una niña con habilidades psíquicas es perseguida por el gobierno que quiere usar sus poderes. La historia mezcla horror y acción, explorando los temas de la familia, el poder y el miedo a lo desconocido.</resum>
+    </llibre>
+</llibres>

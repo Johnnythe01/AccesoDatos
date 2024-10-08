@@ -39,8 +39,6 @@ public class Main {
 }
 
 
-
-
 /*
 U1EX02A
 
@@ -51,8 +49,7 @@ información sobre libros y convertirlo en objetos Java.
 Imprime por consola el resultado de todos los campos de XML:
 
 
-(Sólo por No-DUAL)
+(Sólo para No-DUAL)
 Haz un archivo de texto para cada uno de los autores. Añade dentro de cada archivo lo mismo
 que sacas por la consola.
-
 */
