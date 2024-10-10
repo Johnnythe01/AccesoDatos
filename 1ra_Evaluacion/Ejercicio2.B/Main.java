@@ -1,41 +1,54 @@
-import java.io.File;
-import java.io.FileWriter;
-import javax.xml.parsers.DocumentBuilderFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
+import java.util.jar.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
 
 public class Main {
 
-    public static void main(String[] args) {
-        try {
-            // Cargar el archivo XML
-            Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
-                    .parse(new File("C:\\Users\\alumne-DAM\\Documents\\DAM 2º\\Acceso a Datos\\AccesoDatos\\1ra_Evaluacion\\Ejercicio2.A\\libros.xml"));
-            doc.getDocumentElement().normalize();
-
-            // Obtener lista de libros y procesarla
-            NodeList libros = doc.getElementsByTagName("llibre");
-            for (int i = 0; i < libros.getLength(); i++) {
-                Element libro = (Element) libros.item(i);
-                String autor = libro.getElementsByTagName("autor").item(0).getTextContent();
-                String titol = libro.getElementsByTagName("titol").item(0).getTextContent();
-                String any = libro.getElementsByTagName("any").item(0).getTextContent();
-                String resum = libro.getElementsByTagName("resum").item(0).getTextContent();
-
-                // Imprimir por consola
-                System.out.printf("Autor: %s\nTítulo: %s\nAño: %s\nResumen: %s\n\n", autor, titol, any, resum);
-
-                // Crear archivo del autor (parte No-Dual)
-                FileWriter escritor = new FileWriter(autor.replace(" ", "_") + ".txt", true);
-                escritor.write(String.format("Autor: %s\nTítulo: %s\nAño: %s\nResumen: %s\n\n", autor, titol, any, resum));
-                escritor.close();
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public class Employee {
+    private int id;
+    private String name;
+    private String gender;
+    private int age;
+    private String role;
+    
+    public int getId() {
+        return id;
     }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getGender() {
+        return gender;
+    }
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public String getRole() {
+        return role;
+    }
+    public void setRole(String role) {
+        this.role = role;
+    }
+    
+    @Override
+    public String toString() {
+        return "Employee:: ID="+this.id+" Name=" + this.name + " Age=" + this.age + " Gender=" + this.gender +
+                " Role=" + this.role;
+    }
+    
+}
 }
 
 
