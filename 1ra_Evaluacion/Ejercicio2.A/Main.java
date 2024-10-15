@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             // Cargar el archivo XML
-            Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File("C:\\Users\\alumne-DAM\\Documents\\DAM2\\AccesoDatos\\1ra_Evaluacion\\Ejercicio2.A\\llibres.xml"));
+            Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File("añadir aqui la ruta correspondiente del archivo XML"));
             doc.getDocumentElement().normalize();
 
             // Obtener lista de libros y procesarla
