@@ -10,8 +10,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             // Cargar el archivo XML
-            Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
-                    .parse(new File("C:\\Users\\alumne-DAM\\Documents\\DAM 2º\\Acceso a Datos\\AccesoDatos\\1ra_Evaluacion\\Ejercicio2.A\\libros.xml"));
+            Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File("C:\\Users\\alumne-DAM\\Documents\\DAM2\\AccesoDatos\\1ra_Evaluacion\\Ejercicio2.A\\llibres.xml"));
             doc.getDocumentElement().normalize();
 
             // Obtener lista de libros y procesarla
