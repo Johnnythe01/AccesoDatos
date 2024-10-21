@@ -23,3 +23,8 @@ public class Principal {
     }
 
 }
+
+/* (Sólo por No-DUAL)
+Haz un archivo de texto para cada uno de los años de publicación. Añade dentro de cada archivo lo mismo que sacas por la consola.
+esta bien, el problema */
+// el problema es que no está creando un archivo por cada año, sino que está creando un archivo con todos los libros dentro,como si fuera llibres.xml pero en .txt
