@@ -5,10 +5,33 @@ import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Unmarshaller;
 import java.io.File;
 import java.io.FileWriter;
-import java.util.List;
 import java.util.Collections;
 import java.util.Comparator;
 
+ 
+public class Principal2 {
+ 
+    public static void main(String[] args) {
+ 
+        try {
+            JAXBContext context = JAXBContext.newInstance( Llibre.class );
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            Llibre llibre = (Llibre)unmarshaller.unmarshal(
+                new File("src/llibres.xml") );
+ 
+            System.out.println(llibre.getTitol());
+            System.out.println(Llibre.getPaginas());
+ 
+        } catch (JAXBException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+ 
+    }
+ 
+}
+
+/* 
 public class Main {
 
     public static void main(String[] args) {
@@ -50,7 +73,7 @@ public class Main {
         }
     }
 }
-
+*/
 
 /*
 Ejercicio: Mapeo de un documento XML a objetos Java utilizando JAXB
