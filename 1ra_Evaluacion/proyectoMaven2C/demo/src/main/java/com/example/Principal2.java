@@ -1,12 +1,10 @@
 package com.example;
 
+import java.io.File;
+
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Unmarshaller;
-import java.io.File;
-import java.io.FileWriter;
-import java.util.Collections;
-import java.util.Comparator;
 
  
 public class Principal2 {
@@ -17,7 +15,7 @@ public class Principal2 {
             JAXBContext context = JAXBContext.newInstance( Llibre.class );
             Unmarshaller unmarshaller = context.createUnmarshaller();
             Llibre llibre = (Llibre)unmarshaller.unmarshal(
-                new File("src/llibres.xml") );
+                new File("llibres.xml") );
  
             System.out.println(llibre.getTitol());
             System.out.println(Llibre.getPaginas());

@@ -43,4 +43,9 @@ public class Llibre {
     public void setResum(String resum) {
         this.resum = resum;
     }
+
+    public static char[] getPaginas() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPaginas'");
+    }
 }
