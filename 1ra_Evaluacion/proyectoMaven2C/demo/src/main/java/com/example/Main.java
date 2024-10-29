@@ -1,49 +1,29 @@
 package com.example;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.util.Collections;
+import java.util.Comparator;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Unmarshaller;
 
- 
-public class Principal2 {
- 
-    public static void main(String[] args) {
- 
-        try {
-            JAXBContext context = JAXBContext.newInstance( Llibre.class );
-            Unmarshaller unmarshaller = context.createUnmarshaller();
-            Llibre llibre = (Llibre)unmarshaller.unmarshal(
-                new File("llibres.xml") );
- 
-            System.out.println(llibre.getTitol());
-            System.out.println(Llibre.getPaginas());
- 
-        } catch (JAXBException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
- 
-    }
- 
-}
 
-/* 
 public class Main {
 
     public static void main(String[] args) {
         try {
-            // Crear el contexto de JAXB para las clases generadas
+            // Crear un contexto JAXB para la clase Llibres
             JAXBContext context = JAXBContext.newInstance(Llibres.class);
 
-            // Crear un Unmarshaller para convertir el XML en objetos Java
+            // Crear un unmarshaller
             Unmarshaller unmarshaller = context.createUnmarshaller();
 
-            // Leer el archivo XML y hacer el unmarshalling a objetos Java
+            // Deserializar el archivo XML
             Llibres llibres = (Llibres) unmarshaller.unmarshal(new File("llibres.xml"));
 
-            // Ordenar la lista de libros por el año de publicación (campo 'any')
+            // Ordenar los libros por año de publicación
             Collections.sort(llibres.getLlibre(), Comparator.comparingInt(Llibre::getAny));
 
             // Imprimir los libros por consola
@@ -55,7 +35,7 @@ public class Main {
                 System.out.println("----");
             }
 
-            // Guardar el resultado en un archivo de texto
+            // Escribir los libros en un archivo de texto
             try (FileWriter writer = new FileWriter("resultado.txt")) {
                 for (Llibre llibre : llibres.getLlibre()) {
                     writer.write("Autor: " + llibre.getAutor() + "\n");
@@ -67,11 +47,10 @@ public class Main {
             }
 
         } catch (JAXBException | java.io.IOException e) {
-            e.printStackTrace();
         }
     }
 }
-*/
+
 
 /*
 Ejercicio: Mapeo de un documento XML a objetos Java utilizando JAXB

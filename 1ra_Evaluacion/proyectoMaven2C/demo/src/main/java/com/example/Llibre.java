@@ -3,10 +3,14 @@ package com.example;
 import jakarta.xml.bind.annotation.XmlElement;
 
 public class Llibre {
+
+    // Atributos de la clase Llibre
     private String autor;
     private String titol;
     private int any;
     private String resum;
+
+    // Métodos getter y setter
 
     @XmlElement
     public String getAutor() {
@@ -44,8 +48,4 @@ public class Llibre {
         this.resum = resum;
     }
 
-    public static char[] getPaginas() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPaginas'");
-    }
 }
