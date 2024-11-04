@@ -2,62 +2,62 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Scanner;
 
 public class EmployeeDAO {
-    public EmployeeDAO() {
-        DatabaseConnection.createTable();  // Crear tabla si no existe
-    }
 
-    public void insertEmployee(Scanner scanner) {
-        System.out.print("Ingrese ID: ");
-        int id = scanner.nextInt();
-        scanner.nextLine();
-        System.out.print("Ingrese nombre: ");
-        String nombre = scanner.nextLine();
-        System.out.print("Ingrese edad: ");
-        int edad = scanner.nextInt();
-        scanner.nextLine();
-        System.out.print("Ingrese correo: ");
-        String correo = scanner.nextLine();
-        
-        String sql = "INSERT INTO empleados(id, nombre, edad, correo) VALUES(?, ?, ?, ?)";
-        
-        try (Connection conn = DatabaseConnection.connect();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-             
-            pstmt.setInt(1, id);
-            pstmt.setString(2, nombre);
-            pstmt.setInt(3, edad);
-            pstmt.setString(4, correo);
-            
-            pstmt.executeUpdate();
-            System.out.println("Empleado agregado con éxito.");
-            
+    // Método para insertar datos en la base de datos
+    public void insertEmployee(Connection conn) {
+        Scanner scanner = new Scanner(System.in);
+        String sql = "INSERT INTO empleados (id, nombre, edad, correo) VALUES (?, ?, ?, ?)";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            boolean continuar = true;
+            while (continuar) {
+                System.out.print("Ingrese el ID del empleado: ");
+                int id = Integer.parseInt(scanner.nextLine());
+
+                System.out.print("Ingrese el nombre del empleado: ");
+                String nombre = scanner.nextLine();
+
+                System.out.print("Ingrese la edad del empleado: ");
+                int edad = Integer.parseInt(scanner.nextLine());
+
+                System.out.print("Ingrese el correo del empleado: ");
+                String correo = scanner.nextLine();
+
+                pstmt.setInt(1, id);
+                pstmt.setString(2, nombre);
+                pstmt.setInt(3, edad);
+                pstmt.setString(4, correo);
+                pstmt.executeUpdate();
+
+                System.out.print("¿Desea introducir otro empleado? (si/no): ");
+                continuar = scanner.nextLine().equalsIgnoreCase("si");
+            }
         } catch (SQLException e) {
-            System.err.println("Error al insertar empleado: " + e.getMessage());
+            System.out.println("Error al insertar empleado: " + e.getMessage());
+        } catch (NumberFormatException e) {
+            System.out.println("Formato de entrada inválido. Por favor, intente nuevamente.");
         }
     }
 
-    public void readEmployees() {
-        String sql = "SELECT id, nombre, edad, correo FROM empleados";
-        
-        try (Connection conn = DatabaseConnection.connect();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
-             
+    // Método para leer e imprimir los datos de la base de datos
+    public void printEmployees(Connection conn) {
+        String sql = "SELECT * FROM empleados";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+
             while (rs.next()) {
-                int id = rs.getInt("id");
-                String nombre = rs.getString("nombre");
-                int edad = rs.getInt("edad");
-                String correo = rs.getString("correo");
-                
-                System.out.println("ID: " + id + ", Nombre: " + nombre + ", Edad: " + edad + ", Correo: " + correo);
+                System.out.println("ID: " + rs.getInt("id"));
+                System.out.println("Nombre: " + rs.getString("nombre"));
+                System.out.println("Edad: " + rs.getInt("edad"));
+                System.out.println("Correo: " + rs.getString("correo"));
+                System.out.println("---------------------------");
             }
-            
         } catch (SQLException e) {
-            System.err.println("Error al leer empleados: " + e.getMessage());
+            System.out.println("Error al leer los empleados: " + e.getMessage());
         }
     }
 }

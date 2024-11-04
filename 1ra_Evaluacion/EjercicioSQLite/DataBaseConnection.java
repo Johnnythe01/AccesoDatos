@@ -1,34 +1,30 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class DataBaseConnection {
-    private static final String DB_URL_SQLITE = "jdbc:sqlite:empresa.db";
-    
-    public static Connection connect() {
+    private static final String SQLITE_URL = "jdbc:sqlite:empresa.db";
+    private static final String MYSQL_URL = "jdbc:mysql://localhost:3306/empresa";
+    private static final String MYSQL_USER = "root";
+    private static final String MYSQL_PASSWORD = "Line*age1";
+
+    // Conexión a SQLite
+    public static Connection connectSQLite() {
         try {
-            Connection conn = DriverManager.getConnection(DB_URL_SQLITE);
-            System.out.println("Conexión establecida con SQLite.");
-            return conn;
+            return DriverManager.getConnection(SQLITE_URL);
         } catch (SQLException e) {
-            System.err.println("Error al conectar a la base de datos: " + e.getMessage());
+            System.out.println("Error de conexión SQLite: " + e.getMessage());
             return null;
         }
     }
-    
-    public static void createTable() {
-        String sql = "CREATE TABLE IF NOT EXISTS empleados (" +
-                "id INTEGER PRIMARY KEY," +
-                "nombre TEXT NOT NULL," +
-                "edad INTEGER," +
-                "correo TEXT NOT NULL)";
-        
-        try (Connection conn = connect(); Statement stmt = conn.createStatement()) {
-            stmt.execute(sql);
-            System.out.println("Tabla 'empleados' verificada o creada con éxito.");
+
+    // Conexión a MySQL
+    public static Connection connectMySQL() {
+        try {
+            return DriverManager.getConnection(MYSQL_URL, MYSQL_USER, MYSQL_PASSWORD);
         } catch (SQLException e) {
-            System.err.println("Error al crear la tabla: " + e.getMessage());
+            System.out.println("Error de conexión MySQL: " + e.getMessage());
+            return null;
         }
     }
 }
