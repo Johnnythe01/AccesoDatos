@@ -1,7 +1,7 @@
 {
 	"folders": [
 		{
-			"path": "../../.."
+			"path": "../../.."  // Ajusta esta ruta según la estructura de tu proyecto
 		},
 		{
 			"path": "../../../../Diseño de Interfaces"
@@ -22,10 +22,12 @@
 				"server": "localhost",
 				"port": 3306,
 				"driver": "MySQL",
-				"database": "Empresa",
+				"database": "empresa",
 				"username": "root",
 				"name": "MYSQL Local"
 			}
-		]
+		],
+		"java.project.referencedLibraries": [
+			"C:\\Users\\alumne-DAM\\Documents\\DAM2\\AccesoDatos\\1ra_Evaluacion\\mysql-connector-j-9.0.0\\src\\lib\\mysql-connector-j-9.1.0.jar"		]
 	}
 }
