@@ -20,8 +20,8 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        int opcion;
-        do {
+        int opcion; // Opción seleccionada por el usuario en el menú
+        do { 
             System.out.println("Menú Principal:");
             System.out.println("1. Introducir datos de empleado en la base de datos.");
             System.out.println("2. Leer e imprimir datos de la base de datos.");
