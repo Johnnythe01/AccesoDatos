@@ -30,18 +30,18 @@ public class Main {
             opcion = scanner.nextInt();
             scanner.nextLine(); // Limpiar el buffer
 
-            switch (opcion) {
+            switch (opcion) { // Realizar la acción correspondiente a la opción seleccionada
                 case 1:
-                    introducirDatos(scanner);
+                    introducirDatos(scanner); // Pasar el scanner como argumento
                     break;
                 case 2:
-                    leerDatos();
+                    leerDatos(); // Leer e imprimir datos de la base de datos
                     break;
                 case 3:
-                    System.out.println("Saliendo del programa...");
+                    System.out.println("Saliendo del programa..."); // Salir del programa
                     break;
                 default:
-                    System.out.println("Opción no válida, intente nuevamente.");
+                    System.out.println("Opción no válida, intente nuevamente."); // Opción inválida si pulsamos otro número
             }
         } while (opcion != 3);
 
@@ -51,24 +51,24 @@ public class Main {
     private static void crearBaseDeDatosYTablas() {
         try {
             // Intentar conectar sin especificar la base de datos para crearla si no existe
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            try (Connection connection = DriverManager.getConnection(URL_WITHOUT_DB, USER, PASSWORD);
+            Class.forName("com.mysql.cj.jdbc.Driver"); // Registrar el controlador
+            try (Connection connection = DriverManager.getConnection(URL_WITHOUT_DB, USER, PASSWORD); // Conectar sin base de datos
                  Statement statement = connection.createStatement()) {
 
                 // Verificar si la base de datos "empresa" existe
-                ResultSet resultSet = statement.executeQuery("SHOW DATABASES LIKE 'empresa'");
-                if (!resultSet.next()) {
+                ResultSet resultSet = statement.executeQuery("SHOW DATABASES LIKE 'empresa'"); // Verificar si la base de datos existe
+                if (!resultSet.next()) { 
                     // Crear base de datos "empresa" si no existe
-                    statement.executeUpdate("CREATE DATABASE empresa");
+                    statement.executeUpdate("CREATE DATABASE empresa"); // Crear base de datos
                     System.out.println("Base de datos 'empresa' creada exitosamente.");
                 }
 
                 // Conectar a la base de datos "empresa"
-                try (Connection dbConnection = DriverManager.getConnection(URL, USER, PASSWORD);
+                try (Connection dbConnection = DriverManager.getConnection(URL, USER, PASSWORD); // Conectar a la base de datos
                      Statement dbStatement = dbConnection.createStatement()) {
 
                     // Verificar si la tabla "empleados" existe
-                    ResultSet rs = dbStatement.executeQuery("SHOW TABLES LIKE 'empleados'");
+                    ResultSet rs = dbStatement.executeQuery("SHOW TABLES LIKE 'empleados'"); // Verificar si la tabla existe
                     if (!rs.next()) {
                         // Crear tabla "empleados" si no existe
                         String createTableSQL = "CREATE TABLE empleados ("
@@ -81,19 +81,19 @@ public class Main {
                     }
                 }
             }
-        } catch (ClassNotFoundException e) {
-            System.out.println("Controlador no encontrado: " + e.getMessage());
+        } catch (ClassNotFoundException e) { // Capturar excepciones
+            System.out.println("Controlador no encontrado: " + e.getMessage()); // Mostrar mensaje de error
         } catch (SQLException e) {
             System.out.println("Error al crear base de datos o tablas: " + e.getMessage());
         }
     }
 
-    private static void introducirDatos(Scanner scanner) {
+    private static void introducirDatos(Scanner scanner) { // Recibir un objeto Scanner como argumento
         try {
             Class.forName("com.mysql.cj.jdbc.Driver"); // Registrar el controlador
-            try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
-                String sql = "INSERT INTO empleados (nombre, edad, correo) VALUES (?, ?, ?)";
-                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) { // Conectar a la base de datos
+                String sql = "INSERT INTO empleados (nombre, edad, correo) VALUES (?, ?, ?)"; // Consulta SQL
+                PreparedStatement preparedStatement = connection.prepareStatement(sql); // Preparar la consulta
                 while (true) {
                     System.out.print("Ingrese nombre del empleado: ");
                     String nombre = scanner.nextLine();
@@ -103,11 +103,13 @@ public class Main {
                     System.out.print("Ingrese correo del empleado: ");
                     String correo = scanner.nextLine();
 
+                    // Establecer los valores de los parámetros de la consulta
                     preparedStatement.setString(1, nombre);
                     preparedStatement.setInt(2, edad);
                     preparedStatement.setString(3, correo);
                     preparedStatement.executeUpdate();
 
+                    // Preguntar al usuario si desea ingresar otro empleado
                     System.out.print("¿Desea ingresar otro empleado? (s/n): ");
                     String respuesta = scanner.nextLine();
                     if (!respuesta.equalsIgnoreCase("s")) {
@@ -122,7 +124,7 @@ public class Main {
         }
     }
 
-    private static void leerDatos() {
+    private static void leerDatos() { // Leer e imprimir datos de la base de datos
         try {
             Class.forName("com.mysql.cj.jdbc.Driver"); // Registrar el controlador
             try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
@@ -145,6 +147,7 @@ public class Main {
                     System.out.println("ID: " + id + ", Nombre: " + nombre + ", Edad: " + edad + ", Correo: " + correo);
                 }
             }
+            // Capturar excepciones
         } catch (ClassNotFoundException e) {
             System.out.println("Controlador no encontrado: " + e.getMessage());
         } catch (SQLException e) {
