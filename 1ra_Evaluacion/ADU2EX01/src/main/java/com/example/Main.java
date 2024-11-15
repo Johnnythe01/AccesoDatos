@@ -56,10 +56,10 @@ public class Main {
                  Statement statement = connection.createStatement()) {
 
                 // Verificar si la base de datos "empresa" existe
-                ResultSet resultSet = statement.executeQuery("SHOW DATABASES LIKE 'empresa'"); // Verificar si la base de datos existe
+                ResultSet resultSet = statement.executeQuery("SHOW DATABASES LIKE 'empresa'");
                 if (!resultSet.next()) { 
                     // Crear base de datos "empresa" si no existe
-                    statement.executeUpdate("CREATE DATABASE empresa"); // Crear base de datos
+                    statement.executeUpdate("CREATE DATABASE empresa");
                     System.out.println("Base de datos 'empresa' creada exitosamente.");
                 }
 
