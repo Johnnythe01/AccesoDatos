@@ -1,0 +1,43 @@
+
+
+ADU3EX01
+Mantenimiento de una entidad Persona en una base de datos ObjectDB
+Objetivo
+El objetivo de este ejercicio es crear un programa en Java que nos permita realizar un mantenimiento de una entidad Persona 
+en una base de datos ObjectDB. Los usuarios podrán realizar operaciones básicas sobre esta entidad, como añadir, modificar y eliminar 
+registros, así como consultar los existentes.
+Descripción del ejercicio
+Creación de la entidad Persona:
+Tienes que crear una clase Persona que represente a una persona con los siguientes atributos:
+nombre: una cadena de texto que almacena el nombre de la persona.
+edad: un entero que almacena la edad de la persona.
+email: una cadena de texto que almacena la dirección de correo electrónico de la persona.
+La clase Persona debe ser una entidad JPA, es decir, debe estar marcada con la anotación @Entity y debe tener una propiedad @Id
+que identifique de forma única a cada persona. La base de datos ObjectDB se utilizará para almacenar esta entidad.
+Mantenimiento de datos:
+El programa debe proporcionar un menú interactivo para realizar las siguientes operaciones de mantenimiento:
+Introducir persona: Añadir una nueva persona a la base de datos, capturando los datos del nombre, edad y email desde la consola.
+Borrar persona: Permitir eliminar a una persona de la base de datos a partir de su nombre. Si la persona no existe, 
+debe informarse al usuario.
+Modificar persona: Permitir modificar los datos de una persona existente (nombre, edad y/o email). Si el usuario deja un campo en blanco,
+éste no se modificará.
+Mostrar a todas las personas: Mostrar a todas las personas que actualmente están almacenadas en la base de datos.
+Operaciones con la base de datos ObjectDB:
+Para realizar todas las operaciones de mantenimiento sobre la base de datos, debes utilizar las siguientes operaciones con JPA y ObjectDB:
+Guardar una persona en la base de datos.
+Buscar una persona por nombre para poder modificarla o eliminarla.
+Eliminar a una persona por nombre.
+Modificar una persona existente en la base de datos.
+Recuperar a todas las personas de la base de datos para mostrarlas al usuario.
+Implementación de la aplicación:
+Tu programa debe ser capaz de gestionar la entrada y salida de datos por consola de forma fluida, con las siguientes características:
+El programa debe mostrar un menú interactivo con las opciones disponibles.
+El usuario debe poder seleccionar una opción, y el programa debe responder adecuadamente a cada acción.
+La aplicación debe permitir salir del programa cuando el usuario así lo desee.
+
+
+No-Dual
+
+Amplía el alcance de tu programa añadiendo otra entidad de tipo empresa. La clase empresa debe tener al menos los campos nombre, cif y
+direccion. Realiza el mantenimiento (altas, bajas, modificaciones y consultas) tal y como hemos hecho con la entidad Persona.
+Añade al menú una opción para realizar el mantenimiento de persona o empresa.P
