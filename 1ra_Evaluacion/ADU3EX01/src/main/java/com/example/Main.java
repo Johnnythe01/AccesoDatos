@@ -1,14 +1,17 @@
 package com.example;
 
-import javax.persistence.*;
 import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 public class Main {
 
     public static void main(String[] args) {
         // Crea la unidad de persistencia. Se define en un archivo persistence.xml
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("objectdb_example.odb");
-        EntityManager e = emf.createEntityManager();
+        EntityManager em = emf.createEntityManager();
 
         try {
             // Inicia una transacción
@@ -25,7 +28,7 @@ public class Main {
             // Finaliza la transacción
             em.getTransaction().commit();
 
-            System.out.println(x:"Personas guardadas:");
+            System.out.println("Personas guardadas:");
 
             // Consultar los objetos guardados
             List<Persona> personas = em.createQuery("SELECT p FROM Persona p", Persona.class).getResultList();
@@ -48,3 +51,5 @@ public class Main {
         }
     }
 }
+
+// java -jar C:\Users\alumne-DAM\Desktop\objectdb-2.9.1\bin\explorer.jar
