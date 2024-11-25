@@ -91,10 +91,14 @@ public class Main {
             String nuevoNombre = scanner.next();
             System.out.print("Nueva edad (introducir 0 para no modificar): ");
             int nuevaEdad = scanner.nextInt();
+            System.out.print("Nuevo email (introducir 0 para no modificar): ");
+            String nuevoEmail = scanner.next();
+
 
             em.getTransaction().begin();
             if (!nuevoNombre.isBlank()) persona.setNombre(nuevoNombre);
             if (nuevaEdad > 0) persona.setEdad(nuevaEdad);
+            if (!nuevoEmail.isBlank()) persona.setEmail(nuevoEmail);
             em.getTransaction().commit();
 
             System.out.println("Persona modificada con éxito.");

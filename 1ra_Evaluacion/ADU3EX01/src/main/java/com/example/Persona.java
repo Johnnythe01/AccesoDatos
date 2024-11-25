@@ -50,6 +50,6 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{id=" + id + ", nombre='" + nombre + "', edad=" + edad + "}" + ", email=" + email;
+        return "Persona: id=" + id + ", nombre='" + nombre + "', edad=" + edad + ", email=" + email;
     }
 }
