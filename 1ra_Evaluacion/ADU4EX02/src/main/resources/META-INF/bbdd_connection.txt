@@ -1,0 +1,20 @@
+jdbc.url=jdbc:mysql://localhost:3306/biblioteca
+jdbc.User=root
+jdbc.Password=Line*age1
+
+
+Properties properties = new Properties();
+try (FileInputStream fis = new FileInputStream("bbdd_connection.txt")) {
+    properties.load(fis);
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+// Configuración dinámica de propiedades
+Map<String, String> configOverrides = new HashMap<>();
+configOverrides.put("jakarta.persistence.jdbc.url", properties.getProperty("jdbc.url"));
+configOverrides.put("jakarta.persistence.jdbc.user", properties.getProperty("jdbc.user"));
+configOverrides.put("jakarta.persistence.jdbc.password", properties.getProperty("jdbc.password"));
+
+// Crear el EntityManagerFactory con las propiedades cargadas
+EntityManagerFactory emf = Persistence.createEntityManagerFactory("bibliotecaPU", configOverrides);
