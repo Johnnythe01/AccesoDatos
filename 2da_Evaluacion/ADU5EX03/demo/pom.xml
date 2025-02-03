@@ -20,11 +20,13 @@
             <artifactId>json</artifactId>
             <version>20240303</version>
         </dependency>
+<!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
         <dependency>
             <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver-sync</artifactId>
-            <version>5.2.1</version>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.12.7</version>
         </dependency>
+
     </dependencies>
 
 </project>
