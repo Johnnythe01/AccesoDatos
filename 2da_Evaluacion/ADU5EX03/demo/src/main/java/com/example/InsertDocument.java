@@ -2,6 +2,8 @@ package com.example;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.bson.Document;
 import org.json.JSONObject;
@@ -16,11 +18,13 @@ public class InsertDocument {
 
     public static void main(String[] args) {
 
-        String uri = "mongodb://localhost:27017/";
+        // Esto es simplemente para desactivar logs de MongoDB, si se añade, saldrían muchos mensajes de iformación
+        Logger.getLogger("org.mongodb.driver").setLevel(Level.OFF);
+
+        String uri = "mongodb://localhost:27017/"; // Conexión a MongoDB en localhost
 
         try (MongoClient mongoClient = MongoClients.create(uri)) {
             MongoDatabase database = mongoClient.getDatabase("practica_java");
-
             // Un pequeño menu de consola para introducir nombre de la coleccion
             System.out.print("Introduce el nombre de la coleccion a consultar: ");
             java.util.Scanner scanner = new java.util.Scanner(System.in);
@@ -40,17 +44,19 @@ public class InsertDocument {
             for (Document doc : documents) {
                 // Imprimimos el documento original en JSON
                 System.out.println("Documento JSON: ");
-                System.out.println(doc.toJson());  // Mostrar el documento original en JSON
+                System.out.println(doc.toJson());  // Muestra el documento original en JSON
 
+                // Convertimos el documento a JSON
                 JSONObject jsonObject = new JSONObject(doc.toJson());
 
                 // Convertimos JSON a XML
                 String xmlConverted = json2Xml.convertirJsonAXml(jsonObject);
 
-                // Crear un nombre de archivo único
+                // Crear un nombre de archivo para guardar el XML
                 String fileName = "documento_" + count + ".xml";
                 Files.write(Paths.get(fileName), xmlConverted.getBytes());
 
+                // Imprimimos el XML convertido por consola
                 System.out.println("XML guardado en: " + fileName);
                 System.out.println(xmlConverted);
                 count++;

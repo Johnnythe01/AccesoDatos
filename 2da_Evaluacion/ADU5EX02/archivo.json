@@ -1,0 +1,12 @@
+{"root": [
+    {
+        "city": "Madrid",
+        "name": "Johnny",
+        "age": 29
+    },
+    {
+        "city": "Palma",
+        "name": "Pedro",
+        "age": 20
+    }
+]}

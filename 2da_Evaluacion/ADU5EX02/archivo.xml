@@ -1,5 +1,11 @@
 <root>
-    <name>John Doe</name>
-    <age>30</age>
-    <city>New York</city>
+    <name>Johnny</name>
+    <age>29</age>
+    <city>Madrid</city>
+</root>
+
+<root>
+    <name>Pedro</name>
+    <age>20</age>
+    <city>Palma</city>
 </root>
