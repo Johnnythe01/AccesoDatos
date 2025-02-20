@@ -21,10 +21,10 @@ public class InsertDocument {
         // Esto es simplemente para desactivar logs de MongoDB, si se añade, saldrían muchos mensajes de iformación
         Logger.getLogger("org.mongodb.driver").setLevel(Level.OFF);
 
-        String uri = "mongodb://localhost:27017/"; // Conexión a MongoDB en localhost
+        String uri = "mongodb+srv://user:passguord@cluster0.to9ja.mongodb.net"; // Conexión a MongoDB en localhost
 
         try (MongoClient mongoClient = MongoClients.create(uri)) {
-            MongoDatabase database = mongoClient.getDatabase("practica_java");
+            MongoDatabase database = mongoClient.getDatabase("AD2025");
             // Un pequeño menu de consola para introducir nombre de la coleccion
             System.out.print("Introduce el nombre de la coleccion a consultar: ");
             java.util.Scanner scanner = new java.util.Scanner(System.in);
