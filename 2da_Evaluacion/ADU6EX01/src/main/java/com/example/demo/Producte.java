@@ -32,12 +32,10 @@ public class Producte {
     @Column(nullable = false)
     private Integer quantitat;
 
-    // Constructor vacío
-    public Producte() {
+    public Producte() { // Constructor vacío
     }
 
-    // Constructor con parámetros
-    public Producte(Integer id, String nom, String descripcio, BigDecimal preu, Integer quantitat) { // Constructor con parámetros 
+    public Producte(Integer id, String nom, String descripcio, BigDecimal preu, Integer quantitat) {
         this.id = id;
         this.nom = nom;
         this.descripcio = descripcio;
@@ -86,7 +84,7 @@ public class Producte {
         this.quantitat = quantitat;
     }
 
-    // toString, hashCode, equals si los necesitas (esto es opcional)
+    // toString, hashCode, equals
     @Override
     public String toString() {
         return "Producte{" +

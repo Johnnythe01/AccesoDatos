@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController // Anotación que indica que es un controlador REST
-@RequestMapping("/productes") // Ruta base para las peticiones
-public class ProducteController { // Clase controlador
+@RestController
+@RequestMapping("/productes") // Esta es la ruta base para las peticiones
+public class ProducteController {
 
     private final ProducteService service;
 
@@ -41,14 +41,14 @@ public class ProducteController { // Clase controlador
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Producte> update(@PathVariable Integer id, @RequestBody Producte producte) {
-        Producte updatedProducte = service.update(id, producte);
-        return updatedProducte != null ? ResponseEntity.ok(updatedProducte) : ResponseEntity.notFound().build();
+    public ResponseEntity<Producte> update(@PathVariable Integer id, @RequestBody Producte producte) { // Método para actualizar un producto
+        Producte updatedProducte = service.update(id, producte); // Llama al método de actualización del servicio
+        return updatedProducte != null ? ResponseEntity.ok(updatedProducte) : ResponseEntity.notFound().build(); // Devuelve el producto actualizado o un error 404
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id) {
-        service.delete(id);
-        return ResponseEntity.noContent().build();
+    @DeleteMapping("/{id}") // Método para borrar un producto por su id
+    public ResponseEntity<Void> delete(@PathVariable Integer id) { // Recibe el id como parámetro
+        service.delete(id); // Llama al método de borrado del servicio
+        return ResponseEntity.noContent().build(); // Devuelve una respuesta vacía cuando se borra correctamente
     }
 }
